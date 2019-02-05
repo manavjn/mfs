@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     # 'blog.apps.BlogConfig',
     'taggit',
     'crm',
+    'crispy_forms',
+    'mathfilters',
+    'django.contrib.humanize',
 ]
 
 MIDDLEWARE = [
