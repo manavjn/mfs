@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Customer, Service, Product
+from .models import Customer, Service, Product, User
 
 
 class CustomerList(admin.ModelAdmin):
@@ -22,7 +22,14 @@ class ProductList(admin.ModelAdmin):
     search_fields = ('cust_name', )
     ordering = ['cust_name']
 
+class UserList(admin.ModelAdmin):
+    list_display = ( 'username', 'first_name', 'date_joined')
+    list_filter = ( 'username', 'date_joined')
+    search_fields = ('username', )
+    ordering = ['username']
+
 
 admin.site.register(Customer, CustomerList)
+admin.site.register(User, UserList)
 admin.site.register(Service, ServiceList)
 admin.site.register(Product, ProductList)

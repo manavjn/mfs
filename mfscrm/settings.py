@@ -157,7 +157,7 @@ EMAIL_HOST_USER = 'YOUR HOST USER'
 EMAIL_HOST_PASSWORD = 'YOUR HOST PASSWORD'
 EMAIL_PORT = 2525
 #EMAIL_USE_TLS = True
-
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 try:
     from .local_settings import *

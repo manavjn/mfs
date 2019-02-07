@@ -7,7 +7,9 @@ from django.shortcuts import redirect
 from django.db.models import Sum
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login
-from .forms import LoginForm
+from django.contrib.auth.forms import UserCreationForm
+from django.urls import reverse_lazy
+from django.views import generic
 
 
 now = timezone.now()
@@ -167,3 +169,34 @@ def user_login(request):
     else:
        form = LoginForm()
     return render(request, 'crm/registration/login.html', {'form': form})
+
+def register(request):
+    if request.method == 'POST':
+        user_form = UserForm(request.POST)
+        if user_form.is_valid():
+            new_user = user_form.save(commit=False)
+            new_user.set_password(
+                 user_form.cleaned_data['password'])
+            new_user.save()
+            return render(request, 'crm/customer_list.html',
+                 {'new_user': new_user})
+    else:
+        user_form = UserForm()
+    return render(request, 'crm/register.html',
+        {'user_form': user_form})
+
+def password_reset(request):
+    return render(request, 'home/password_reset.html',
+    {'home': password_reset})
+
+def password_reset_confirm(request):
+    return render(request, 'home/password_reset_confirm.html',
+    {'home': password_reset_confirm})
+
+def password_reset_email(request):
+    return render(request, 'home/password_reset_email.html',
+    {'home': password_reset_email})
+
+def password_reset_complete(request):
+    return render(request, 'home/password_reset_complete.html',
+    {'home': password_reset_complete})
