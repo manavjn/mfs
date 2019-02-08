@@ -85,10 +85,10 @@ WSGI_APPLICATION = 'mfscrm.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd6n10a8k1bjv89',
-        'USER': 'hndxayriokhhzy',
-        'PASSWORD': 'a074a99810bb2f0de14c9991b70aed48242abadc1d4e1cceebeefea1afe3cd7e',
-        'HOST': 'postgres://hndxayriokhhzy:a074a99810bb2f0de14c9991b70aed48242abadc1d4e1cceebeefea1afe3cd7e@ec2-54-163-246-159.compute-1.amazonaws.com:5432/d6n10a8k1bjv89',
+        'NAME': 'defhqqo61dc8cq',
+        'USER': 'xjsdzydwuergwu',
+        'PASSWORD': '30c5570a2ff9aeb697724f83760fb73800121f9850529896a219c5b075940e14',
+        'HOST': 'postgres://xjsdzydwuergwu:30c5570a2ff9aeb697724f83760fb73800121f9850529896a219c5b075940e14@ec2-54-83-17-151.compute-1.amazonaws.com:5432/defhqqo61dc8cq',
         'PORT': '5432',
     }
 }
