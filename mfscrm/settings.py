@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 """
 
 import os
-import dj_database_url
+# import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # 'blog.apps.BlogConfig',
-    'taggit',
+    # 'taggit',
     'crm',
     'crispy_forms',
     'mathfilters',
@@ -80,6 +80,7 @@ WSGI_APPLICATION = 'mfscrm.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
+# https://manav-mfs.herokuapp.com/accounts/login/
 
 DATABASES = {
     'default': {
@@ -140,9 +141,9 @@ STATICFILES_DIRS = (
 )
 
 # Update database configuration with $DATABASE_URL.
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
-DATABASES['default'] = dj_database_url.config()
+# db_from_env = dj_database_url.config(conn_max_age=500)
+# DATABASES['default'].update(db_from_env)
+# DATABASES['default'] = dj_database_url.config()
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
@@ -152,11 +153,11 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = ' '
-EMAIL_HOST_PASSWORD = ' '
-EMAIL_PORT = '587'
-EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.mailtrap.io'
+EMAIL_HOST_USER = 'YOUR HOST USER'
+EMAIL_HOST_PASSWORD = 'YOUR HOST PASSWORD'
+EMAIL_PORT = 2525
+#EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
