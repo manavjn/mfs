@@ -19,34 +19,24 @@
     <h1 style="padding-left: 15Px">Customer Summary</h1>
 </div>
 
-
-
-<div class="row">
+    <div class="row">
         <h2 style="padding-left: 15Px">Customer Total</h2>
-</div>
-<div class="row">
+    </div>
     <table class="table table-striped table-bordered table-hover">
         <thead>
-        <tr class="bg-info">
-            <th>Total of Service Charges and Product Charges</th>
-        </tr>
+            <tr class="bg-info">
+                <th>Total of Service and Product Charges</th>
+            </tr>
         </thead>
         <tbody>
-        {% for product in products %}
             <tr>
                 <td>{{ sum_service_charge.service_charge__sum |addition:sum_product_charge.charge__sum|intcomma }}</td>
+
             </tr>
-        {% endfor %}
         </tbody>
     </table>
-</div>
 
-
-
-
-
-
-<div class="row">
+    <div class="row">
         <h2 style="padding-left: 15Px">Service Information</h2>
     </div>
     <div class="row">
@@ -89,9 +79,7 @@
             </tr>
         </tbody>
     </table>
-
-
-
+</div>
 
     <div class="row">
         <h2 style="padding-left: 15Px">Product Information</h2>
@@ -129,7 +117,7 @@
         </thead>
         <tbody>
             <tr>
-                <td>{{ sum_product_charge.charge__sum|intcomma }}</td>
+                <td><div id="pt">{{ sum_product_charge.charge__sum|intcomma }} </div></td>
 
             </tr>
         </tbody>
