@@ -160,7 +160,7 @@ EMAIL_PORT = 2525
 #EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-
+LOGIN_REDIRECT_URL="/"
 
 try:
     from .local_settings import *

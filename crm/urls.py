@@ -2,6 +2,7 @@ from django.conf.urls import url
 from . import views
 from django.urls import path,re_path
 from django.contrib.auth.views import password_change, password_change_done
+from . import views
 
 app_name = 'crm'
 urlpatterns = [
@@ -18,7 +19,7 @@ urlpatterns = [
     path('product_list', views.product_list, name='product_list'),
     path('product/create/', views.product_new, name='product_new'),
     path('product/<int:pk>/edit/', views.product_edit, name='product_edit'),
-    path('product/<int:pk>/delete/', views.service_delete, name='product_delete'),
+    path('product/<int:pk>/delete/', views.product_delete, name='product_delete'),
     path('customer/<int:pk>/summary/', views.summary, name='summary'),
     path('register', views.register, name='register'),
     url(r'^password-change/$', password_change, {'post_change_redirect': '/password-change/done/'},
