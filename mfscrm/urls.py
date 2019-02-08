@@ -4,6 +4,7 @@ from django.urls import path, re_path
 from django.contrib.auth.views import LoginView, LogoutView
 
 urlpatterns = [
+
     path('admin/', admin.site.urls),
     path('', include('crm.urls')),
     re_path(r'^accounts/login/$', LoginView.as_view(template_name='registration/login.html'), name="login"),
