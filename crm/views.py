@@ -180,3 +180,17 @@ def register(request):
         user_form = UserForm()
     return render(request, 'crm/register.html',
         {'user_form': user_form})
+
+@login_required
+def change_password(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(request.user, request.POST)
+        if form.is_valid():
+            user = form.save()
+            update_session_auth_hash(request, user)  # Important!
+            return render(request, 'registration/password_change_done.html')
+    else:
+        form = PasswordChangeForm(request.user)
+    return render(request, 'registration/password_change_form.html', {
+        'form': form
+    })
